@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Audy Gading Pramudya</title>
+  <style>
+    /* General body and font styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    /* Header styling */
+    .main-header {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .main-header .judul1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .main-header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .main-header nav ul li {
+      margin-left: 25px;
+    }
+
+    .main-header nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .main-header nav ul li a.active {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    .main-header nav ul li a:hover {
+      background-color: #34495e;
+      color: #fff;
+    }
+
+    /* Main content sections */
+    main {
+      padding-top: 2rem;
+    }
+
+    section {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Specific section styling */
+    .beranda {
+      text-align: center;
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #fff;
+      padding: 6rem 2rem;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .beranda h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .beranda p {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .button {
+      background-color: #2c3e50;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 50px;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #34495e;
+      transform: translateY(-3px);
+    }
+
+    #tentang {
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    
+    /* Layout for "Tentang Saya" section to place image and text side-by-side */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-content img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #3498db;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .about-content img:hover {
+      transform: scale(1.05);
+    }
+    
+    .about-content p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    /* Media query for larger screens to enable side-by-side layout */
+    @media (min-width: 768px) {
+      .about-content {
+        flex-direction: row;
+        gap: 3rem;
+      }
+      .about-content p {
+        text-align: left;
+      }
+      .about-content img {
+        margin-bottom: 0;
+      }
+    }
+
+    #projek {
+      background: #ecf0f1;
+    }
+
+    .projek-card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projek-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .projek-card h3 {
+      color: #3498db;
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .projek-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #ddd;
+    }
+
+    .projek-card p {
+      font-size: 1rem;
+    }
+
+    .video-projek iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #kontak {
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    #kontak p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #kontak a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    #kontak a:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
+
+    #kontak iframe {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      font-size: 0.9rem;
+      border-top: 1px solid #34495e;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="judul1">Audy Gading Pramudya</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" >Beranda</a></li>
+        <li><a href="index2.html">Tentang</a></li>
+        <li><a href="index3.html">Projek</a></li>
+        <li><a href="index4.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="beranda" id="beranda">
+      <h2>Selamat datang, Audy Gading Pramudya</h2>
+      <p>Saya adalah Siswa SMKN 6 Kota Tangerang Selatan</p>
+      <a href="#projek" class="button">Lihat Projek Saya</a>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <div class="about-content">
+        <img src="WhatsApp Image 2025-06-17 at 18.40.49.jpeg" alt="gading">
+        <p>
+          Saya seorang siswa RPL yang bercita-cita menjadi seorang
+          <strong>UI/UX Designer profesional sekaligus Full-Stack Developer</strong>. 
+          Saya menyukai tantangan dalam membuat website yang tidak hanya
+          fungsional, tetapi juga memiliki desain yang intuitif dan menarik.
+          Proses ini bagi saya adalah perpaduan antara seni dan logika.
+        </p>
+      </div>
+    </section>
+
+    <section id="projek">
+      <h2>Projek Saya</h2>
+      <div class="projek-card">
+        <h3>Website E-Commerce Sederhana</h3>
+        <img
+          src="projek jualan.png"
+          alt="Tampilan projek website e-commerce"
+          class="projek-img"
+        />
+        <p>
+          Sebuah website e-commerce sederhana yang berfungsi untuk menampilkan
+          berbagai produk kepada calon pembeli dengan antarmuka yang bersih dan
+          mudah digunakan. Projek ini saya rancang menggunakan Figma dan
+          diimplementasikan dengan HTML, CSS, dan JavaScript.
+        </p>
+      </div>
+
+      <div class="projek-card">
+        <h3>Desain Poster Promosi</h3>
+        <img src="Screenshot 2025-04-24 202042.png" alt="Tampilan poster promosi">
+        <p>
+          Sebuah poster sederhana yang berfungsi untuk menampilkan
+          berbagai produk kepada calon pembeli. Projek ini saya rancang menggunakan Figma.
+        </p>
+      </div>
+
+      <div class="projek-card video-projek">
+        <h3>Demonstrasi Video Projek</h3>
+        <iframe src="https://www.youtube.com/embed/5GI8haFglYE" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak Saya</h2>
+      <p>
+        Mari terhubung! Saya terbuka untuk kolaborasi, kesempatan kerja, atau
+        sekadar diskusi tentang teknologi dan desain.
+      </p>
+      <p>
+        <a href="mailto:Audygadingp17@gmail.com">Audygadingp17@gmail.com</a> |
+        <a href="tel:+628128873893">0812-8873-893</a>
+      </p>
+      <iframe
+        src="http://maps.google.com/maps?q=smkn+6+tangerang+selatan&z=15&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        title="Lokasi SMKN 6 Kota Tangerang Selatan"
+      ></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Audy Gading Pramudya. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
